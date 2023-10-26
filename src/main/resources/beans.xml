@@ -1,0 +1,80 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+       default-init-method="init"
+       default-destroy-method="destroy"
+>
+
+    <!-- DI with factory -->
+    <bean
+        id="myPlayer"
+        class="de.manu.springtest.modules.player.PlayerFactory"
+        factory-method="buildPlayer"
+    >
+        <constructor-arg name="id" value="myplayer-1" />
+        <constructor-arg name="name" value="zManuu" />
+    </bean>
+
+    <bean
+        id="myStaticPlayer"
+        class="de.manu.springtest.modules.player.PlayerFactory"
+        factory-method="buildPlayer"
+        scope="prototype"
+    >
+        <constructor-arg name="id" value="myplayer-2" />
+        <constructor-arg name="name" value="Passiv" />
+    </bean>
+
+    <!-- DI with constructor -->
+    <bean
+        id="myDataSource"
+        class="de.manu.springtest.modules.data.TestDataSource"
+        destroy-method="close"
+    >
+        <constructor-arg ref="debugLogger" />
+    </bean>
+
+    <!-- DI with setters -->
+    <bean
+            id="myServerData"
+            class="de.manu.springtest.modules.server.ServerData"
+    >
+        <property name="version" ref="config-version" />
+        <property name="logger" ref="debugLogger" />
+        <property name="onlinePlayers">
+            <set>
+                <ref bean="myPlayer" />
+                <ref bean="myStaticPlayer" />
+                <!-- inner bean -->
+                <bean
+                    class="de.manu.springtest.modules.player.PlayerFactory"
+                    factory-method="buildPlayer"
+                >
+                    <constructor-arg name="id" value="myplayer-2" />
+                    <constructor-arg name="name" value="Passiv" />
+                </bean>
+            </set>
+        </property>
+    </bean>
+
+    <!-- Inheritance -->
+    <bean
+        id="myDefaultVehicle"
+        class="de.manu.springtest.modules.vehicle.Vehicle"
+    >
+        <property name="logger" ref="debugLogger" />
+        <property name="name" value="parent" />
+        <property name="manufacturerName" value="parent" />
+        <property name="hasTrunk" value="true" />
+        <property name="trunkCapacityInKg" value="60" />
+    </bean>
+
+    <bean
+        id="myBetterVehicle"
+        parent="myDefaultVehicle"
+    >
+        <property name="name" value="better" />
+        <property name="manufacturerName" value="better-manufacturer" />
+    </bean>
+
+</beans>
