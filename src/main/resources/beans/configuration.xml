@@ -1,0 +1,44 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!-- placeholders -->
+    <context:property-placeholder location="properties/*.properties"/>
+
+    <!-- format -->
+    <bean
+            id="config-format"
+            class="de.manu.springtest.modules.Configuration.Format"
+    >
+        <constructor-arg name="dateTime" value="${format.datetime}" />
+        <constructor-arg name="date" value="${format.date}" />
+        <constructor-arg name="time" value="${format.time}" />
+        <constructor-arg name="loggingInstantiation" value="${format.logging.instantiation}" />
+    </bean>
+
+    <!-- version -->
+    <bean
+            id="config-version"
+            class="de.manu.springtest.modules.Configuration.Version"
+    >
+        <constructor-arg name="version" value="${version.version}" />
+        <constructor-arg name="name" value="${version.name}" />
+    </bean>
+
+    <!-- data-source -->
+    <bean
+            id="config-db"
+            class="de.manu.springtest.modules.Configuration.Datasource"
+    >
+        <constructor-arg name="host" value="${db.host}" />
+        <constructor-arg name="port" value="${db.port}" />
+        <constructor-arg name="userName" value="${db.userName}" />
+        <constructor-arg name="password" value="${db.userPassword}" />
+        <constructor-arg name="databaseName" value="${db.databaseName}" />
+    </bean>
+
+</beans>

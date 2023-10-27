@@ -29,33 +29,4 @@
         <constructor-arg name="formatConfig" ref="config-format" />
     </bean>
 
-    <bean
-        id="config-db"
-        class="de.manu.springtest.modules.Configuration.Datasource"
-    >
-        <constructor-arg name="host" value="${db.host}" />
-        <constructor-arg name="port" value="${db.port}" />
-        <constructor-arg name="userName" value="${db.userName}" />
-        <constructor-arg name="password" value="${db.userPassword}" />
-        <constructor-arg name="databaseName" value="${db.databaseName}" />
-    </bean>
-
-    <bean
-        id="config-version"
-        class="de.manu.springtest.modules.Configuration.Version"
-    >
-        <constructor-arg name="version" value="${version.version}" />
-        <constructor-arg name="name" value="${version.name}" />
-    </bean>
-
-    <bean
-        id="config-format"
-        class="de.manu.springtest.modules.Configuration.Format"
-    >
-        <constructor-arg name="dateTime" value="${format.datetime}" />
-        <constructor-arg name="date" value="${format.date}" />
-        <constructor-arg name="time" value="${format.time}" />
-        <constructor-arg name="loggingInstantiation" value="${format.logging.instantiation}" />
-    </bean>
-
 </beans>
