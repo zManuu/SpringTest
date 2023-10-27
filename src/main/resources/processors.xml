@@ -6,11 +6,26 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <context:property-placeholder location="properties/db.properties,properties/version.properties"/>
+    <context:property-placeholder location="properties/*.properties"/>
 
     <bean class="de.manu.springtest.modules.processor.InstantiationTracingBeanPostProcessor">
         <constructor-arg ref="gson" />
         <constructor-arg ref="debugLogger" />
+    </bean>
+
+    <bean
+        id="customPropertyEditorRegistrar"
+        class="de.manu.springtest.modules.processor.CustomPropertyEditorRegistrar"
+    >
+        <constructor-arg name="formatConfig" ref="config-format" />
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="propertyEditorRegistrars">
+            <list>
+                <ref bean="customPropertyEditorRegistrar"/>
+            </list>
+        </property>
     </bean>
 
     <bean class="de.manu.springtest.modules.data.DataSourceListener">

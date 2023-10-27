@@ -23,8 +23,11 @@
 
     <bean
         id="gson"
-        class="com.google.gson.Gson"
-    />
+        class="de.manu.springtest.modules.processor.GsonFactory"
+        factory-method="build"
+    >
+        <constructor-arg name="formatConfig" ref="config-format" />
+    </bean>
 
     <bean
         id="config-db"
@@ -43,6 +46,13 @@
     >
         <constructor-arg name="version" value="${version.version}" />
         <constructor-arg name="name" value="${version.name}" />
+    </bean>
+
+    <bean
+        id="config-format"
+        class="de.manu.springtest.modules.processor.FormatConfig"
+    >
+        <constructor-arg name="dateTime" value="${format.datetime}" />
     </bean>
 
 </beans>

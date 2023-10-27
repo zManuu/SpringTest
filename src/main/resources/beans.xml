@@ -8,21 +8,21 @@
     <!-- DI with factory -->
     <bean
         id="myPlayer"
-        class="de.manu.springtest.modules.player.PlayerFactory"
-        factory-method="buildPlayer"
+        class="de.manu.springtest.modules.player.Player"
     >
         <constructor-arg name="id" value="myplayer-1" />
         <constructor-arg name="name" value="zManuu" />
+        <constructor-arg name="createdAt" value="27.10.2023-11:00" />
     </bean>
 
     <bean
         id="myStaticPlayer"
-        class="de.manu.springtest.modules.player.PlayerFactory"
-        factory-method="buildPlayer"
+        class="de.manu.springtest.modules.player.Player"
         scope="prototype"
     >
         <constructor-arg name="id" value="myplayer-2" />
         <constructor-arg name="name" value="Passiv" />
+        <constructor-arg name="createdAt" value="27.10.2023-10:56" />
     </bean>
 
     <!-- DI with constructor -->
@@ -47,11 +47,11 @@
                 <ref bean="myStaticPlayer" />
                 <!-- inner bean -->
                 <bean
-                    class="de.manu.springtest.modules.player.PlayerFactory"
-                    factory-method="buildPlayer"
+                    class="de.manu.springtest.modules.player.Player"
                 >
-                    <constructor-arg name="id" value="myplayer-2" />
-                    <constructor-arg name="name" value="Passiv" />
+                    <constructor-arg name="id" value="myplayer-3" />
+                    <constructor-arg name="name" value="Bonobo" />
+                    <constructor-arg name="createdAt" value="27.10.2023-11:00" />
                 </bean>
             </set>
         </property>

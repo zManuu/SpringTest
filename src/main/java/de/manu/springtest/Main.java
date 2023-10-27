@@ -1,20 +1,13 @@
 package de.manu.springtest;
 
+import lombok.Getter;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 
-    private final AbstractApplicationContext context;
-
     public static void main(String[] args) {
-        var main = new Main(
-                new ClassPathXmlApplicationContext(new String[] { "classpath*:*.xml" })
-        );
-    }
-
-    public Main(AbstractApplicationContext context) {
-        this.context = context;
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"classpath*:*.xml"});
         context.registerShutdownHook();
     }
 }
