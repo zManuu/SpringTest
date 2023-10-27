@@ -55,6 +55,7 @@
         <constructor-arg name="dateTime" value="${format.datetime}" />
         <constructor-arg name="date" value="${format.date}" />
         <constructor-arg name="time" value="${format.time}" />
+        <constructor-arg name="loggingInstantiation" value="${format.logging.instantiation}" />
     </bean>
 
 </beans>

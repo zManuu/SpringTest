@@ -1,6 +1,7 @@
 package de.manu.springtest.modules.processor;
 
 import com.google.gson.Gson;
+import de.manu.springtest.modules.Configuration;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.springframework.beans.BeansException;
@@ -13,6 +14,7 @@ public class InstantiationTracingBeanPostProcessor implements BeanPostProcessor 
 
     private final transient Gson gson;
     private final transient Logger logger;
+    private final Configuration.Format formatConfig;
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
@@ -23,10 +25,11 @@ public class InstantiationTracingBeanPostProcessor implements BeanPostProcessor 
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         this.logger.info(
                 MessageFormat.format(
-                        "A bean of type \"{0}\" with name \"{1}\" was created: {2}",
+                        this.formatConfig.loggingInstantiation(),
                         bean.getClass().getName(),
+                        bean.getClass().getSimpleName(),
                         beanName,
-                        gson.toJson(bean)
+                        this.gson.toJson(bean)
                 )
         );
         return bean;

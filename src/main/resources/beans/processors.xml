@@ -11,6 +11,7 @@
     <bean class="de.manu.springtest.modules.processor.InstantiationTracingBeanPostProcessor">
         <constructor-arg ref="gson" />
         <constructor-arg ref="debugLogger" />
+        <constructor-arg ref="config-format" />
     </bean>
 
     <bean
