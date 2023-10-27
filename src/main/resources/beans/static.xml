@@ -23,7 +23,7 @@
 
     <bean
         id="gson"
-        class="de.manu.springtest.modules.processor.json.GsonFactory"
+        class="de.manu.springtest.modules.processor.factories.GsonFactory"
         factory-method="build"
     >
         <constructor-arg name="formatConfig" ref="config-format" />

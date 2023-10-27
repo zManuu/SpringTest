@@ -1,4 +1,4 @@
-package de.manu.springtest.modules.processor.json;
+package de.manu.springtest.modules.processor.factories;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
