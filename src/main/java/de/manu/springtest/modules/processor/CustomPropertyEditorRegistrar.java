@@ -1,6 +1,6 @@
 package de.manu.springtest.modules.processor;
 
-import de.manu.springtest.modules.processor.format.FormatConfig;
+import de.manu.springtest.modules.Configuration;
 import de.manu.springtest.modules.processor.time.DateEditor;
 import de.manu.springtest.modules.processor.time.DateTimeEditor;
 import de.manu.springtest.modules.processor.time.TimeEditor;
@@ -17,13 +17,13 @@ import java.util.UUID;
 @AllArgsConstructor
 public class CustomPropertyEditorRegistrar implements PropertyEditorRegistrar {
 
-    private final FormatConfig formatConfig;
+    private final Configuration.Format formatConfig;
 
     @Override
     public void registerCustomEditors(PropertyEditorRegistry registry) {
-        registry.registerCustomEditor(LocalDateTime.class, new DateTimeEditor(formatConfig.getDateTime()));
-        registry.registerCustomEditor(LocalDate.class, new DateEditor(formatConfig.getDate()));
-        registry.registerCustomEditor(LocalTime.class, new TimeEditor(formatConfig.getTime()));
+        registry.registerCustomEditor(LocalDateTime.class, new DateTimeEditor(formatConfig.dateTime()));
+        registry.registerCustomEditor(LocalDate.class, new DateEditor(formatConfig.date()));
+        registry.registerCustomEditor(LocalTime.class, new TimeEditor(formatConfig.time()));
         registry.registerCustomEditor(UUID.class, new UUIDEditor());
     }
 }

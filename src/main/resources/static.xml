@@ -31,18 +31,18 @@
 
     <bean
         id="config-db"
-        class="de.manu.springtest.modules.data.DataSourceConfig"
+        class="de.manu.springtest.modules.Configuration.Datasource"
     >
         <constructor-arg name="host" value="${db.host}" />
         <constructor-arg name="port" value="${db.port}" />
         <constructor-arg name="userName" value="${db.userName}" />
-        <constructor-arg name="userPassword" value="${db.userPassword}" />
+        <constructor-arg name="password" value="${db.userPassword}" />
         <constructor-arg name="databaseName" value="${db.databaseName}" />
     </bean>
 
     <bean
         id="config-version"
-        class="de.manu.springtest.modules.server.VersionConfig"
+        class="de.manu.springtest.modules.Configuration.Version"
     >
         <constructor-arg name="version" value="${version.version}" />
         <constructor-arg name="name" value="${version.name}" />
@@ -50,7 +50,7 @@
 
     <bean
         id="config-format"
-        class="de.manu.springtest.modules.processor.format.FormatConfig"
+        class="de.manu.springtest.modules.Configuration.Format"
     >
         <constructor-arg name="dateTime" value="${format.datetime}" />
         <constructor-arg name="date" value="${format.date}" />

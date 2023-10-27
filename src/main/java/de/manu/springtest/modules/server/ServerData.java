@@ -1,5 +1,6 @@
 package de.manu.springtest.modules.server;
 
+import de.manu.springtest.modules.Configuration;
 import de.manu.springtest.modules.player.Player;
 import lombok.Setter;
 import org.slf4j.Logger;
@@ -18,7 +19,7 @@ public class ServerData implements BeanNameAware, ResourceLoaderAware {
 
     private transient ResourceLoader resourceLoader;
     private transient Logger logger;
-    private VersionConfig version;
+    private Configuration.Version version;
     private Set<Player> onlinePlayers;
     private String beanName;
 
