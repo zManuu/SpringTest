@@ -8,7 +8,6 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ResourceLoaderAware;
 import org.springframework.core.io.ResourceLoader;
 
-import java.text.MessageFormat;
 import java.util.Set;
 
 /**

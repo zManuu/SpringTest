@@ -1,13 +1,11 @@
 package de.manu.springtest.modules.vehicle;
 
-import lombok.AllArgsConstructor;
 import lombok.Setter;
 import org.slf4j.Logger;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import java.text.MessageFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
