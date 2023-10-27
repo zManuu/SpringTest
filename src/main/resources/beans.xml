@@ -10,7 +10,7 @@
         id="myPlayer"
         class="de.manu.springtest.modules.player.Player"
     >
-        <constructor-arg name="id" value="myplayer-1" />
+        <constructor-arg name="uuid" value="97afad3f-cdc8-4e8e-9e9d-0b583ff866f1" />
         <constructor-arg name="name" value="zManuu" />
         <constructor-arg name="createdAt" value="27.10.2023-11:00" />
     </bean>
@@ -20,7 +20,7 @@
         class="de.manu.springtest.modules.player.Player"
         scope="prototype"
     >
-        <constructor-arg name="id" value="myplayer-2" />
+        <constructor-arg name="uuid" value="b38edf70-9123-422c-8767-76f48419ff38" />
         <constructor-arg name="name" value="Passiv" />
         <constructor-arg name="createdAt" value="27.10.2023-10:56" />
     </bean>
@@ -49,7 +49,7 @@
                 <bean
                     class="de.manu.springtest.modules.player.Player"
                 >
-                    <constructor-arg name="id" value="myplayer-3" />
+                    <constructor-arg name="uuid" value="7fdb093d-4a5a-45e9-8f00-f435a066e22d" />
                     <constructor-arg name="name" value="Bonobo" />
                     <constructor-arg name="createdAt" value="27.10.2023-11:00" />
                 </bean>
@@ -67,6 +67,8 @@
         <property name="manufacturerName" value="parent" />
         <property name="hasTrunk" value="true" />
         <property name="trunkCapacityInKg" value="60" />
+        <property name="creationDate" value="27.10.2023" />
+        <property name="creationTime" value="13:39" />
     </bean>
 
     <bean

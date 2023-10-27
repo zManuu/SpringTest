@@ -1,4 +1,4 @@
-package de.manu.springtest.modules.processor;
+package de.manu.springtest.modules.processor.time;
 
 import de.manu.springtest.Main;
 import lombok.AllArgsConstructor;

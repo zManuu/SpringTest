@@ -8,6 +8,8 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import java.text.MessageFormat;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  * Used to test bean inheritance, validation
@@ -20,6 +22,8 @@ public class Vehicle {
     private String manufacturerName;
     private boolean hasTrunk;
     private int trunkCapacityInKg;
+    private LocalDate creationDate;
+    private LocalTime creationTime;
 
     public static class VehicleValidator implements Validator {
         public boolean supports(Class<?> clazz) { return Vehicle.class.isAssignableFrom(clazz); }
