@@ -3,24 +3,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
 >
 
-    <!-- todo: specify log level in bean -->
-    <bean
-        id="debugLogger"
-        class="org.slf4j.LoggerFactory"
-        factory-method="getLogger"
-    >
-        <constructor-arg value="" />
-    </bean>
-
-    <!-- todo: specify log level in bean -->
-    <bean
-        id="prodLogger"
-        class="org.slf4j.LoggerFactory"
-        factory-method="getLogger"
-    >
-        <constructor-arg value="" />
-    </bean>
-
     <bean
         id="gson"
         class="de.manu.springtest.modules.processor.factories.GsonFactory"

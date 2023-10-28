@@ -5,7 +5,6 @@
 
     <bean class="de.manu.springtest.modules.processor.InstantiationTracingBeanPostProcessor">
         <constructor-arg ref="gson" />
-        <constructor-arg ref="debugLogger" />
         <constructor-arg ref="config-format" />
     </bean>
 
@@ -13,7 +12,7 @@
         id="customPropertyEditorRegistrar"
         class="de.manu.springtest.modules.processor.CustomPropertyEditorRegistrar"
     >
-        <constructor-arg name="formatConfig" ref="config-format" />
+        <constructor-arg ref="config-format" />
     </bean>
 
     <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
@@ -24,8 +23,6 @@
         </property>
     </bean>
 
-    <bean class="de.manu.springtest.modules.data.DataSourceListener">
-        <constructor-arg ref="debugLogger" />
-    </bean>
+    <bean class="de.manu.springtest.modules.data.DataSourceListener" />
 
 </beans>

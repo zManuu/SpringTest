@@ -30,9 +30,7 @@
         id="myDataSource"
         class="de.manu.springtest.modules.data.TestDataSource"
         destroy-method="close"
-    >
-        <constructor-arg ref="debugLogger" />
-    </bean>
+    />
 
     <!-- DI with setters -->
     <bean
@@ -40,7 +38,6 @@
             class="de.manu.springtest.modules.server.ServerData"
     >
         <property name="version" ref="config-version" />
-        <property name="logger" ref="debugLogger" />
         <property name="onlinePlayers">
             <set>
                 <ref bean="myPlayer" />
@@ -62,7 +59,6 @@
         id="myDefaultVehicle"
         class="de.manu.springtest.modules.vehicle.Vehicle"
     >
-        <property name="logger" ref="debugLogger" />
         <property name="name" value="parent" />
         <property name="manufacturerName" value="parent" />
         <property name="hasTrunk" value="true" />

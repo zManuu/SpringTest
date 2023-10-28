@@ -15,7 +15,6 @@ import java.time.LocalTime;
 @Setter
 public class Vehicle {
 
-    private transient Logger logger;
     private String name;
     private String manufacturerName;
     private boolean hasTrunk;
