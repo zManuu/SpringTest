@@ -7,7 +7,7 @@ public class UUIDEditor extends PropertyEditorSupport {
 
     @Override
     public String getAsText() {
-        return ((UUID) getValue()).toString();
+        return getValue().toString();
     }
 
     @Override

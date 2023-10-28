@@ -7,29 +7,29 @@
 
     <!-- DI with factory -->
     <bean
-        id="myPlayer"
-        class="de.manu.springtest.modules.player.Player"
+            id="myPlayer"
+            class="de.manu.springtest.modules.player.Player"
     >
-        <constructor-arg name="uuid" value="97afad3f-cdc8-4e8e-9e9d-0b583ff866f1" />
-        <constructor-arg name="name" value="zManuu" />
-        <constructor-arg name="createdAt" value="27.10.2023-11:00" />
+        <constructor-arg name="uuid" value="97afad3f-cdc8-4e8e-9e9d-0b583ff866f1"/>
+        <constructor-arg name="name" value="zManuu"/>
+        <constructor-arg name="createdAt" value="27.10.2023-11:00"/>
     </bean>
 
     <bean
-        id="myStaticPlayer"
-        class="de.manu.springtest.modules.player.Player"
-        scope="prototype"
+            id="myStaticPlayer"
+            class="de.manu.springtest.modules.player.Player"
+            scope="prototype"
     >
-        <constructor-arg name="uuid" value="b38edf70-9123-422c-8767-76f48419ff38" />
-        <constructor-arg name="name" value="Passiv" />
-        <constructor-arg name="createdAt" value="27.10.2023-10:56" />
+        <constructor-arg name="uuid" value="b38edf70-9123-422c-8767-76f48419ff38"/>
+        <constructor-arg name="name" value="Passiv"/>
+        <constructor-arg name="createdAt" value="27.10.2023-10:56"/>
     </bean>
 
     <!-- DI with constructor -->
     <bean
-        id="myDataSource"
-        class="de.manu.springtest.modules.data.TestDataSource"
-        destroy-method="close"
+            id="myDataSource"
+            class="de.manu.springtest.modules.data.TestDataSource"
+            destroy-method="close"
     />
 
     <!-- DI with setters -->
@@ -37,18 +37,18 @@
             id="myServerData"
             class="de.manu.springtest.modules.server.ServerData"
     >
-        <property name="version" ref="config-version" />
+        <property name="version" ref="config-version"/>
         <property name="onlinePlayers">
             <set>
-                <ref bean="myPlayer" />
-                <ref bean="myStaticPlayer" />
+                <ref bean="myPlayer"/>
+                <ref bean="myStaticPlayer"/>
                 <!-- inner bean -->
                 <bean
-                    class="de.manu.springtest.modules.player.Player"
+                        class="de.manu.springtest.modules.player.Player"
                 >
-                    <constructor-arg name="uuid" value="7fdb093d-4a5a-45e9-8f00-f435a066e22d" />
-                    <constructor-arg name="name" value="Bonobo" />
-                    <constructor-arg name="createdAt" value="27.10.2023-11:00" />
+                    <constructor-arg name="uuid" value="7fdb093d-4a5a-45e9-8f00-f435a066e22d"/>
+                    <constructor-arg name="name" value="Bonobo"/>
+                    <constructor-arg name="createdAt" value="27.10.2023-11:00"/>
                 </bean>
             </set>
         </property>
@@ -56,23 +56,23 @@
 
     <!-- Inheritance -->
     <bean
-        id="myDefaultVehicle"
-        class="de.manu.springtest.modules.vehicle.Vehicle"
+            id="myDefaultVehicle"
+            class="de.manu.springtest.modules.vehicle.Vehicle"
     >
-        <property name="name" value="parent" />
-        <property name="manufacturerName" value="parent" />
-        <property name="hasTrunk" value="true" />
-        <property name="trunkCapacityInKg" value="60" />
-        <property name="creationDate" value="27.10.2023" />
-        <property name="creationTime" value="13:39" />
+        <property name="name" value="parent"/>
+        <property name="manufacturerName" value="parent"/>
+        <property name="hasTrunk" value="true"/>
+        <property name="trunkCapacityInKg" value="60"/>
+        <property name="creationDate" value="27.10.2023"/>
+        <property name="creationTime" value="13:39"/>
     </bean>
 
     <bean
-        id="myBetterVehicle"
-        parent="myDefaultVehicle"
+            id="myBetterVehicle"
+            parent="myDefaultVehicle"
     >
-        <property name="name" value="better" />
-        <property name="manufacturerName" value="better-manufacturer" />
+        <property name="name" value="better"/>
+        <property name="manufacturerName" value="better-manufacturer"/>
     </bean>
 
 </beans>

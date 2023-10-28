@@ -1,7 +1,5 @@
 package de.manu.springtest.modules.data;
 
-import lombok.AllArgsConstructor;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationListener;
 

@@ -4,11 +4,11 @@
 >
 
     <bean
-        id="gson"
-        class="de.manu.springtest.modules.processor.factories.GsonFactory"
-        factory-method="build"
+            id="gson"
+            class="de.manu.springtest.modules.processor.factories.GsonFactory"
+            factory-method="build"
     >
-        <constructor-arg name="formatConfig" ref="config-format" />
+        <constructor-arg name="formatConfig" ref="config-format"/>
     </bean>
 
 </beans>

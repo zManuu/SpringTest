@@ -14,10 +14,10 @@
             id="config-format"
             class="de.manu.springtest.modules.Configuration.Format"
     >
-        <constructor-arg name="dateTime" value="${format.datetime}" />
-        <constructor-arg name="date" value="${format.date}" />
-        <constructor-arg name="time" value="${format.time}" />
-        <constructor-arg name="loggingInstantiation" value="${format.logging.instantiation}" />
+        <constructor-arg name="dateTime" value="${format.datetime}"/>
+        <constructor-arg name="date" value="${format.date}"/>
+        <constructor-arg name="time" value="${format.time}"/>
+        <constructor-arg name="loggingInstantiation" value="${format.logging.instantiation}"/>
     </bean>
 
     <!-- version -->
@@ -25,8 +25,8 @@
             id="config-version"
             class="de.manu.springtest.modules.Configuration.Version"
     >
-        <constructor-arg name="version" value="${version.version}" />
-        <constructor-arg name="name" value="${version.name}" />
+        <constructor-arg name="version" value="${version.version}"/>
+        <constructor-arg name="name" value="${version.name}"/>
     </bean>
 
     <!-- data-source -->
@@ -34,11 +34,11 @@
             id="config-db"
             class="de.manu.springtest.modules.Configuration.Datasource"
     >
-        <constructor-arg name="host" value="${db.host}" />
-        <constructor-arg name="port" value="${db.port}" />
-        <constructor-arg name="userName" value="${db.userName}" />
-        <constructor-arg name="password" value="${db.userPassword}" />
-        <constructor-arg name="databaseName" value="${db.databaseName}" />
+        <constructor-arg name="host" value="${db.host}"/>
+        <constructor-arg name="port" value="${db.port}"/>
+        <constructor-arg name="userName" value="${db.userName}"/>
+        <constructor-arg name="password" value="${db.userPassword}"/>
+        <constructor-arg name="databaseName" value="${db.databaseName}"/>
     </bean>
 
 </beans>

@@ -7,5 +7,5 @@ public class DataSourceConnectEvent extends ApplicationEvent {
     public DataSourceConnectEvent(Object source) {
         super(source);
     }
-    
+
 }

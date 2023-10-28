@@ -1,7 +1,6 @@
 package de.manu.springtest.modules.vehicle;
 
 import lombok.Setter;
-import org.slf4j.Logger;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
@@ -23,7 +22,10 @@ public class Vehicle {
     private LocalTime creationTime;
 
     public static class VehicleValidator implements Validator {
-        public boolean supports(Class<?> clazz) { return Vehicle.class.isAssignableFrom(clazz); }
+        public boolean supports(Class<?> clazz) {
+            return Vehicle.class.isAssignableFrom(clazz);
+        }
+
         public void validate(Object target, Errors errors) {
             if (!(target instanceof Vehicle vehicle))
                 return;

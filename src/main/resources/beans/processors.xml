@@ -4,15 +4,15 @@
         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean class="de.manu.springtest.modules.processor.InstantiationTracingBeanPostProcessor">
-        <constructor-arg ref="gson" />
-        <constructor-arg ref="config-format" />
+        <constructor-arg ref="gson"/>
+        <constructor-arg ref="config-format"/>
     </bean>
 
     <bean
-        id="customPropertyEditorRegistrar"
-        class="de.manu.springtest.modules.processor.CustomPropertyEditorRegistrar"
+            id="customPropertyEditorRegistrar"
+            class="de.manu.springtest.modules.processor.CustomPropertyEditorRegistrar"
     >
-        <constructor-arg ref="config-format" />
+        <constructor-arg ref="config-format"/>
     </bean>
 
     <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
@@ -23,6 +23,6 @@
         </property>
     </bean>
 
-    <bean class="de.manu.springtest.modules.data.DataSourceListener" />
+    <bean class="de.manu.springtest.modules.data.DataSourceListener"/>
 
 </beans>
