@@ -8,7 +8,7 @@
             class="de.manu.springtest.modules.processor.factories.GsonFactory"
             factory-method="build"
     >
-        <constructor-arg name="formatConfig" ref="config-format"/>
+        <constructor-arg ref="config-format"/>
     </bean>
 
 </beans>
